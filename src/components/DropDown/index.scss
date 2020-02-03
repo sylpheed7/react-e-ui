@@ -1,0 +1,63 @@
+@import '../../scss/util.scss';
+.DropDown {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+    .DropDown-Menu-box {
+        position: absolute; 
+        left: 0; 
+        top: 105%;
+        z-index: 10;
+        display: flex;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        background: #fff;
+        .DropDown-Menu { 
+            margin: 0;
+            .ui-menu-item {
+                line-height: 22px;
+                font-size: 14px;
+                padding: 5px 12px;
+                word-wrap: break-word;
+                white-space: nowrap;
+                &:hover {
+                    background-color: #e6f7ff;
+                    color: rgba(0, 0, 0, 0.65);
+                }
+            }
+            .ui-menu-item-selected {
+                background: none;
+                color: rgba(0, 0, 0, 0.65);
+            }
+        }
+    }
+    .disabled{
+        color: $col10;
+    }
+    &-side-enter{
+        opacity: 0;
+        animation-duration: .3s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+        animation-play-state: paused;  
+    }
+    
+    &-side-exit {
+        animation-duration: .3s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+        animation-play-state: paused;
+    }
+    
+    &-side-enter-active {
+        animation-name: SlideDownIn;
+        animation-play-state: running;
+    }
+    
+    &-side-exit-active {
+        animation-name: SlideDownOut;
+        animation-play-state: running;
+    }
+}

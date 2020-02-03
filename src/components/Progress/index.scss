@@ -1,0 +1,38 @@
+.progress-outer {
+    display: inline-block;
+    width: 100%;
+    height: 21px;
+    margin-right: calc(-2em - 8px);
+    padding-right: calc(2em + 8px);
+    // background-color: red;
+    .progress-inner {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 8px;
+        overflow: hidden;
+        vertical-align: middle;
+        background-color: #f5f5f5;
+        border-radius: 100px;
+        .progress-bg {
+            position: relative;
+            left: -100%;
+            border-radius: 100px;
+            background-color: #1890ff;
+            transition: all .6s ease-in;
+        }
+    }
+}
+
+.progress-text {
+    display: inline-block;
+    width: 2em;
+    margin-left: 8px;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 1em;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
+    word-break: normal;
+}

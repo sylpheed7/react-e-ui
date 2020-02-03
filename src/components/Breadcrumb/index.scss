@@ -1,0 +1,23 @@
+@import '../../scss/util.scss';
+
+/*设置标题面包屑样式*/
+.breadcrumb-box{
+    font-size: 14px;
+    color: $col10;
+    & > span{
+        /*设置分隔符边距*/
+        .breadcrumb-separator{
+            margin: 0 8px;
+        }
+        /*改变最后一个的字体颜色*/
+        &:last-child{
+            color: $col2;
+        }
+        a {
+            color: $col10;
+            &:hover {
+                color: $col2
+            }
+        }
+    }
+}

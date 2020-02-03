@@ -1,0 +1,79 @@
+.sc-tag {
+    border: 1px solid #d9ecff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    // height: 32px;
+    line-height: 20px;
+    margin-left: 10px;
+    padding: 0 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    .sc-tag-close {
+        position: relative;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 12px;
+        text-align: center;
+        line-height: 15px;
+        transition: all .3s cubic-bezier(.78, .14, .15, .86);
+        transform: scale(.83333333) rotate(0deg);
+    }
+    &-hidden {
+        display: none;
+    }
+}
+
+.sc-tag-base {
+    background-color: #ecf5ff;
+    // border-color: #d9ecff;
+    border: 1px solid #d9ecff;
+    color: #409eff;
+    .sc-tag-close:hover {
+        color: #fff;
+        background-color: #409eff;
+    }
+}
+
+.sc-tag-success {
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+    color: #67c23a;
+    .sc-tag-close:hover {
+        color: #fff;
+        background-color: #67c23a;
+    }
+}
+
+.sc-tag-info {
+    background-color: #f4f4f5;
+    border-color: #e9e9eb;
+    color: #909399;
+    .sc-tag-close:hover {
+        color: #fff;
+        background-color: #909399;
+    }
+}
+
+.sc-tag-warning {
+    background-color: #fdf6ec;
+    border-color: #faecd8;
+    color: #e6a23c;
+    .sc-tag-close:hover {
+        color: #fff;
+        background-color: #e6a23c;
+    }
+}
+
+.sc-tag-danger {
+    background-color: #fef0f0;
+    border-color: #fde2e2;
+    color: #f56c6c;
+    .sc-tag-close:hover {
+        color: #fff;
+        background-color: #f56c6c;
+    }
+}

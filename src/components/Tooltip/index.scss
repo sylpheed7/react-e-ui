@@ -1,0 +1,246 @@
+@import '../../scss/util.scss';
+
+.tips-up {
+    &-enter {
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 1);
+        // animation-duration: .3s;
+        // animation-fill-mode: both;
+        // animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+        // animation-play-state: paused;
+    }
+
+    &-exit {
+        opacity: 1;
+        // transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.34);
+    }
+
+    &-enter-active {
+
+        // animation-name: ZoomIn;
+        // animation-play-state: running;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: opacity .2s cubic-bezier(0.08, 0.82, 0.17, 1), transform .2s cubic-bezier(0.08, 0.82, 0.17, 1);
+    }
+
+    &-exit-active {
+        // animation-name: ZoomOut;
+        // animation-play-state: running;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 1);
+        transition: opacity .2s cubic-bezier(0.6, 0.04, 0.98, 0.34), transform .2s cubic-bezier(0.6, 0.04, 0.98, 0.34);
+    }
+}
+
+.tooltip-area {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    .tooltip-content-box {
+        position: absolute;
+        z-index: 10;
+        display: inline;
+        .tooltip-body {
+            white-space: nowrap;
+            background: #404040;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            padding: 5px 10px;
+            position: relative;
+            z-index: 9;
+        }
+        .arrow {
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            z-index: 8;
+            &:after {
+                content: '';
+                width: 0 !important;
+                border-radius: 0 !important;
+                border: 4px solid transparent;
+                position: absolute;
+                background: transparent !important;
+            }
+        }
+    }
+
+    //top topLeft topBottom
+    .topLeft {
+        left: 0;
+        bottom: 100%;
+        transform-origin: 9px calc(100% + 9px);
+        padding-bottom: 9px;
+        .arrow:after {
+            border-top: 5px solid #404040;
+            left: 9px !important;
+            bottom: 0;
+        }
+    }
+
+    .top {
+        left: 50%;
+        bottom: 100%;
+        // transform: scale3d(1, 1, 1) translate(-50%,0);
+        transform-origin: 50% calc(100% + 9px);
+        padding-bottom: 9px;
+        .arrow:after {
+            border-top: 5px solid #404040;
+            left: 50% !important;
+            bottom: 0;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .topRight {
+        right: 0;
+        bottom: 100%;
+        transform-origin: calc(100% - 9px) calc(100% + 9px);
+        padding-bottom: 9px;
+        .arrow:after {
+            border-top: 5px solid #404040;
+            right: 9px !important;
+            bottom: 0;
+        }
+    }
+
+    //left leftTop leftBottom
+    .leftTop {
+        top: 0;
+        right: 100%;
+        transform-origin: calc(100% + 5px) 5px;
+        padding-right: 9px;
+        .arrow:after {
+            border-left: 5px solid #404040;
+            top: 5px !important;
+            right: 0;
+        }
+    }
+
+    .left {
+        top: 50%;
+        right: 100%;
+        transform-origin: calc(100% + 10px) 50%;
+        padding-right: 9px;
+        .arrow:after {
+            border-left: 5px solid #404040;
+            top: 50% !important;
+            right: 0;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .leftBottom {
+        bottom: 0;
+        right: 100%;
+        transform-origin: calc(100% + 9px) calc(100% - 9px);
+        padding-right: 9px;
+        .arrow:after {
+            border-left: 5px solid #404040;
+            bottom: 5px !important;
+            right: 0;
+        }
+    }
+
+    //right rightTop rightBottom
+    .rightTop {
+        top: 0;
+        left: 100%;
+        transform-origin: -9px 9px;
+        padding-left: 9px;
+        .arrow:after {
+            border-right: 5px solid #404040;
+            top: 5px !important;
+            left: 0;
+        }
+    }
+
+    .right {
+        top: 50%;
+        left: 100%;
+        transform-origin: -9px 50%;
+        padding-left: 9px;
+        .arrow:after {
+            border-right: 5px solid #404040;
+            top: 50% !important;
+            left: 0;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .rightBottom {
+        bottom: 0;
+        left: 100%;
+        transform-origin: -9px calc(100% - 9px);
+        padding-left: 9px;
+        .arrow:after {
+            border-right: 5px solid #404040;
+            bottom: 5px !important;
+            left: 0;
+        }
+    }
+
+    //bottom bottomLeft  bottomRight
+    .bottomLeft {
+        left: 0;
+        top: 100%;
+        transform-origin: 9px -9px;
+        padding-top: 9px;
+        .arrow:after {
+            border-bottom: 5px solid #404040;
+            left: 9px !important;
+            top: 0;
+        }
+    }
+
+    .bottom {
+        left: 50%;
+        top: 100%;
+        transform-origin: 50% -9px;
+        padding-top: 9px;
+        .arrow:after {
+            border-bottom: 5px solid #404040;
+            left: 50% !important;
+            top: 0;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .bottomRight {
+        right: 0;
+        top: 100%;
+        transform-origin: calc(100% - 9px) -9px;
+        padding-top: 9px;
+        .arrow:after {
+            border-bottom: 5px solid #404040;
+            right: 9px !important;
+            top: 0;
+        }
+    }
+}
+
+//箭头指向中心
+.tooltip-area-arrowPointAtCenter {
+    position: relative;
+    display: inline-block;
+
+    .arrowPointAtCenter-title {
+        background: #404040;
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: calc(100% + 0px);
+        left: 44%;
+        border-radius: 3px;
+
+        &:after {
+            border: 5px solid transparent;
+            border-top: 5px solid #404040;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+}

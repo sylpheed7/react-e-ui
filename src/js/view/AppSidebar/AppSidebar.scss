@@ -1,0 +1,40 @@
+@import '../../../scss/util.scss';
+
+.layout .layout-sider .layout-sider-children {
+    border-right: 1px solid #e8e8e8;
+    z-index: 3;
+}
+
+.appSidebar-box {
+    // flex: 0 0 256px;
+    // width: 256px;
+    // padding-bottom: 40px;
+    // min-height: 100%;
+    background: #fff;
+
+    // box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+
+    .ui-menu {
+        height: calc(100vh - 100px);
+        overflow: scroll;
+    }
+
+    .appSidebar-logo {
+        //background: rgb(44,44,44);
+        box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+        height: 60px;
+        padding-left: 24px;
+        display: flex;
+        align-items: center; //background: #002040;
+        //background: #fff;
+        color: #333;
+        font-weight: 700;
+        font-size: 24px;
+
+        img {
+            width: auto;
+            height: 50%;
+            margin-right: 10px;
+        }
+    }
+}

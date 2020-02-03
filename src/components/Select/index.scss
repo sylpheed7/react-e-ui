@@ -1,0 +1,247 @@
+@import '../../scss/util.scss';
+
+.select {
+    position: relative;
+    min-height: 32px;
+    outline:none;
+    width: 100%;
+    .input {
+        display: flex;
+        width: 100%;
+        background: transparent;
+        border-radius: 4px;
+        border: 1px solid $col13;
+        min-height: 32px;
+        line-height: 30px;
+        vertical-align: middle;
+        padding: 0 37px 0 12px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $col11;
+        position: relative;
+        cursor: pointer;
+        transition: all .3s;
+        box-align: center;
+        align-items: center;
+        text-align: left;
+
+        .input-values {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .typeInput {
+            outline: none;
+            background: none;
+            border: 0;
+            font-size: 14px; color: #595959;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            padding: 0 37px 0 12px;
+            z-index: 10;
+            &:focus { box-shadow: none;}
+        }
+
+        ul:not(.placeholder) {
+            width: 100%;
+            display: block;
+            line-height: 1;
+            padding-bottom: 3px;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-left: -8px;
+            li {
+                vertical-align: top;
+                display: inline-block;
+                height: 24px;
+                line-height: 24px;
+                padding: 0 24px 0 10px;
+                border: 1px solid $col13;
+                border-radius: 4px;
+                max-width: 99%;
+                position: relative;
+                color: $col9;
+                background-color: #fafafa;
+                margin: 3px 4px 0 0;
+                &.typeInputBox { width: 35px; min-height: 100%; padding: 0; margin: 0; border: 0 solid #000; background: none; position: relative;
+                    input { width: auto; margin-top: 3px; padding: 0;}
+                }
+
+                span {
+                    line-height: 22px;
+                    display: inline-block;
+                    max-width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .icon {
+                    font-size: 13px;
+                    margin-left: 5px;
+                    position: absolute;
+                    right: 6px;
+                    top: 5px;
+                }
+
+                &.zoom-in {
+                    opacity: .8 !important;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .arrow {
+        position: absolute;
+        z-index: 9;
+        right: 12px;
+        top: 28%;
+        font-size: 16px;
+        color: $col11;
+        cursor: pointer;
+        @include transition(all .2s);
+        // @include transform(translateY(-50%));
+    }
+
+    .clear {
+        @extend .arrow;
+        display: none;
+        z-index: 10;
+        background-color: #fff;
+    }
+
+    .selectItemList {
+        // pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        border-radius: 4px;
+        max-height: 250px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 11;
+        // display: none;
+
+        &:hover {
+            & ~ .clear { display: none !important;}
+        }
+
+        li {
+            transition: all .1s;
+            padding: 0 12px;
+            line-height: 32px;
+            height: 32px;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &:not(.disabled):hover {
+                background-color: $col4;
+
+                .icon {
+                    opacity: 1;
+                }
+            }
+
+            &.cur {
+                background: #fafafa;
+                font-weight: 500;
+                color: $col9;
+
+                &:hover {
+                    background-color: $col4;
+
+                }
+
+                .icon {
+                    opacity: 1;
+                    color: $col1;
+                }
+            }
+
+            &.disabled {
+                cursor: not-allowed;
+                // pointer-events: none;
+                color: $col13;
+            }
+
+            .icon {
+                transition: all .15s;
+                color: $col13;
+                position: absolute;
+                top: 10px;
+                right: 11px;
+                opacity: 0;
+            }
+        }
+    }
+
+    &.disabled {
+        .input {
+            cursor: not-allowed;
+            border-color: $col13 !important;
+            background: #e5e5e5 !important;
+        }
+
+        &:hover {
+            .input {
+                border-color: $col13 !important;
+            }
+            .clear { 
+                display: none;
+            }
+            .arrow { 
+                color: $col13 !important;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &:hover {
+        .input {
+            border-color: #0099FF;
+        }
+        .clear { display: block;}
+    }
+
+    &.default {
+        .input {
+            color: $col9;
+        }
+    }
+
+    &.focus {
+        .input {
+            border-color: $col1;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
+        }
+        &.inputEdit {
+            .input {
+                color: #595959;
+            }
+        }
+    }
+
+    &.selectOpen {
+        .arrow {
+            @include transform(rotate(180deg) translateY(2px));
+        }
+    }
+}

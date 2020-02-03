@@ -1,0 +1,305 @@
+@import 'util.scss';
+
+.layout {
+    background: #F0F2F5;
+    min-height: 100vh !important;
+}
+
+.footer {
+    text-align: center;
+    color: #848587;
+    font-size: 14px;
+    padding: 58px 0 30px;
+}
+
+
+.ui-menu .ui-menu-submenu .ui-menu-submenu-title .icon, .ui-menu.ui-menu-inline .ui-menu-item .icon {
+    & + span {
+        margin-left: 10px;
+    }
+}
+
+.headerMenu {
+    position: relative;
+    flex: 0 0 auto;
+    height: 60px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    z-index: 1;
+    ul {
+        display: flex;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+
+        // align-items: center;
+        li {
+            font-size: 14px;
+            cursor: pointer;
+            .clear-btn {
+                border-top: 1px solid $col12;
+                margin-top: 16px;
+                height: 35px;
+                line-height: 35px;
+                background-color: #f1f1f1;
+            }
+
+            .tabs-box {
+                box-shadow: 0 3px 5px rgba(0,0,0,.2);
+                border-radius:0 0 5px;
+                .tabs-tab {
+                    height: 40px;
+                    line-height: 40px;
+                    li {
+                        padding: 0 16px;
+                        margin-right: 0;
+                    }
+                }
+                .tabs-tabpane {
+                    ul {
+                        display: block;
+                        height: auto;
+                        line-height: auto;
+                        li { 
+                            line-height: 35px;
+                            padding-left: 30px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            i {
+                display: inline-block;
+                width: 36px;
+                font-size: 16px;
+            }
+
+            &:hover {
+                background: #F9F9F9;
+            }
+            &.user-tongzhi{
+                position: relative;
+                &:hover{
+                    >div{
+                        display: block;
+                    }
+                }
+                >div{
+                    position: absolute;
+                    // width: 280px;
+                    right: 0;
+                    display: none;
+                }
+            }
+            &.user-name {
+                padding: 0 12px;
+                position: relative;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                }
+
+                span {
+                    margin-left: 10px;
+                }
+
+                ul {
+                    display: none;
+                    position: absolute;
+                    top: 64px;
+                    right: 0;
+                    height: auto;
+                    overflow: hidden;
+                    background: #FFFFFF;
+                    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+                    border-radius: 4px;
+                    z-index: 1;
+                    // display: flex;
+                    flex-flow: column nowrap;
+                    padding-top: 6px;
+
+                    li {
+                        width: 160px;
+                        height: 32px;
+                        line-height: 32px;
+                        font-size: 14px;
+                        text-align: left;
+
+                        i {
+                            width: 16px;
+                            margin: 0 9px 0 12px;
+                        }
+
+                        &:hover {
+                            background: $col4;
+                        }
+
+                        &:last-child {
+                            height: 39px;
+                            line-height: 39px;
+                            border-top: 1px solid $col12;
+                        }
+
+                        ;
+                    }
+                }
+
+                &:after {
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    position: absolute;
+                    top: 60px;
+                }
+
+                &:hover {
+                    ul {
+                        display: flex;
+                    }
+                }
+            }
+            &.internationalization{
+                position: relative;
+                ul {
+                    display: none;
+                    position: absolute;
+                    top: 64px;
+                    left: 0;
+                    height: auto;
+                    overflow: hidden;
+                    background: #FFFFFF;
+                    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+                    border-radius: 4px;
+                    z-index: 1;
+                    // display: flex;
+                    flex-flow: column nowrap;
+                    padding-top: 6px;
+
+                    li {
+                        width: 160px;
+                        height: 32px;
+                        line-height: 32px;
+                        font-size: 14px;
+                        text-align: left;
+
+                        i {
+                            width: 16px;
+                            margin: 0 9px 0 12px;
+                        }
+
+                        &:hover {
+                            background: $col4;
+                        }
+                    }
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    position: absolute;
+                    top: 60px;
+                }
+
+                &:hover {
+                    ul {
+                        display: flex;
+                    }
+                }
+            }
+            &.set-menu {
+                i {
+                    width: 60px;
+                    color: $col1;
+                }
+            }
+        }
+    }
+}
+
+.paginationPage {
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 30px;
+}
+
+.code-demo{
+    font-size: 14px;
+    margin-top: 20px;
+
+    .code-demo-content{
+        .code-demo-describe{
+            background: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        pre{
+            background: #f2f2f2;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+            word-break: break-word;
+            padding: 10px 20px;
+        }
+    }
+}
+
+.router-fade {
+    &-enter{
+        opacity: 0;
+        animation-duration: .3s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in;
+        animation-play-state: paused;  
+    }
+    
+    &-exit {
+        animation-duration: .3s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in;
+        animation-play-state: paused;
+    }
+    
+    &-enter-active {
+        animation-name: fadeIn;
+        animation-play-state: running;
+    }
+    
+    &-exit-active {
+        animation-name: fadeOut;
+        animation-play-state: running;
+    }
+}
+
+.layout-1 {
+    text-align: center; color: #fff; min-height: 0 !important;
+    .layout-header { background-color: rgba(57,153,255,1);}
+    .layout-content { background-color: rgba(57,153,255,.8); height: 100px; flex: 0 0 auto !important;}
+    .layout-footer { background-color: rgba(57,153,255,.6);}
+    .layout-sider { background-color: #000 !important;}
+    &.layout-2 {
+        height: 100px; flex: 0 0 auto !important;
+        .layout-content { flex:auto !important; height: auto;}
+        .has-sider-1 { flex: 0 0 auto !important; min-height: 0 !important;}
+    }
+}
+
+.tabledeom {
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    th { border-bottom: 1px solid #eee;}
+    th, td { border-right: 1px solid #eee;}
+    .add {
+        padding-left: 40px;
+    }
+}
+
+
+

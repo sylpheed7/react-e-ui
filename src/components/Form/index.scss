@@ -1,0 +1,161 @@
+@import '../../scss/util.scss';
+.ui-form{
+  font-size: 14px;
+  .ui-form-item{
+    display: flex;
+    display: -webkit-flex;
+
+    margin-bottom: 3px;
+    min-height: 52px;
+    .ui-form-item-label{
+      flex: 0 0 auto;
+      -webkit-flex: 0 0 auto;
+
+      line-height: 30px;
+      padding-right: 20px;
+    }
+    .ui-form-item-content{
+      flex: 1;
+      -webkit-flex: 1;
+      //overflow: auto;
+
+      .ui-form-item-error-msg{
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #FF4951;
+        opacity: 1;
+      }
+
+      //.input-wrapper{
+      //  .input{
+      //    border: 1px solid red;
+      //  }
+      //}
+
+      .radio-wrapper{
+        margin-top: 6px;
+      }
+
+      .radio-group{
+        margin-top: 6px;
+      }
+
+      .checkbox-wrapper{
+        margin-top: 6px;
+      }
+
+      .checkbox-group{
+        margin-top: 6px;
+      }
+
+    }
+
+    &.ui-form-item-success{
+      .ui-form-item-content{
+
+        .input-wrapper{
+          .input{
+            border: 1px solid #2CD7AA;
+            &:focus{
+              -webkit-box-shadow: 0 0 0 2px rgba(44,215,170,0.2);
+              box-shadow: 0 0 0 2px rgba(44,215,170,0.2);
+            }
+          }
+        }
+
+        .textarea-wrapper{
+          .textarea{
+            border: 1px solid #2CD7AA;
+            &:focus{
+              -webkit-box-shadow: 0 0 0 2px rgba(44,215,170,0.2);
+              box-shadow: 0 0 0 2px rgba(44,215,170,0.2);
+            }
+          }
+        }
+
+        .calendar-picker-box {
+          .date-picker-input{
+            border: 1px solid #2CD7AA;
+          }
+        }
+
+        .select{
+          &.focus{
+            .input {
+              -webkit-box-shadow: 0 0 0 2px rgba(44, 215, 170, 0.2);
+              box-shadow: 0 0 0 2px rgba(44, 215, 170, 0.2);
+            }
+          }
+          .input{
+            border: 1px solid #2CD7AA;
+            &:focus{
+              -webkit-box-shadow: 0 0 0 2px rgba(44,215,170,0.2);
+              box-shadow: 0 0 0 2px rgba(44,215,170,0.2);
+            }
+          }
+        }
+
+      }
+    }
+
+    &.ui-form-item-error{
+      .ui-form-item-content{
+
+        .ui-form-item-error-msg{
+          opacity: 1;
+        }
+
+        .input-wrapper{
+          .input{
+            border: 1px solid #FF4951;
+            &:focus{
+              -webkit-box-shadow: 0 0 0 2px rgba(255,73,81,0.2);
+              box-shadow: 0 0 0 2px rgba(255,73,81,0.2);
+            }
+          }
+        }
+
+        .textarea-wrapper{
+          .textarea{
+            border: 1px solid #FF4951;
+            &:focus{
+              -webkit-box-shadow: 0 0 0 2px rgba(255,73,81,0.2);
+              box-shadow: 0 0 0 2px rgba(255,73,81,0.2);
+            }
+          }
+        }
+
+        .calendar-picker-box {
+          .date-picker-input{
+            border: 1px solid #FF4951;
+          }
+        }
+
+        .select{
+          &.focus {
+            .input {
+              -webkit-box-shadow: 0 0 0 2px rgba(255, 73, 81, 0.2);
+              box-shadow: 0 0 0 2px rgba(255, 73, 81, 0.2);
+            }
+          }
+          .input{
+            border: 1px solid #FF4951;
+            &:focus{
+              -webkit-box-shadow: 0 0 0 2px rgba(255,73,81,0.2);
+              box-shadow: 0 0 0 2px rgba(255,73,81,0.2);
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+//.ui-form .ui-form-item .ui-form-item-content{
+//  //.input-wrapper .input{
+//  //  border: 1px solid red;
+//  //}
+//}

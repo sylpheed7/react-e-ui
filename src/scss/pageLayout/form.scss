@@ -1,0 +1,26 @@
+@import '../util.scss';
+.form-box{
+    font-size: 14px;
+    color: $col8;
+    padding: 6px 0 40px 0;
+    table{
+        width: 100%;
+        td{
+            padding-top: 30px;
+            .btn{
+                margin-right: 10px;
+            }
+        }
+    }
+    input{
+        width:442px;
+        height:32px;
+        line-height:32px;
+        border-radius:4px;
+        border:1px solid rgba(217,217,217,1);
+        padding: 0 12px;
+    }
+    .txr{
+        text-align: right;
+    }
+}

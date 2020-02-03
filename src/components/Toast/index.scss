@@ -1,0 +1,60 @@
+@import '../../scss/util';
+
+.toast {
+    position: fixed;
+    left: 0;
+    top: 30px;
+    right: 0;
+    z-index: 9999;
+    // display: flex;
+    // justify-content:center;
+    // align-items: center;
+    text-align: center;
+    pointer-events: none;
+    &-enter {
+        opacity: 0;
+        transform: scale3d(0.8, 0.8, 1) translateY( -50%);
+    }
+
+    &-enter-active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) translateY( 0);
+        transition: opacity .2s cubic-bezier(0.08, 0.82, 0.17, 1), transform .2s cubic-bezier(0.08, 0.82, 0.17, 1);
+    }
+
+    &-exit {
+        opacity: 1;
+    }
+
+    &-exit-active {
+        opacity: 0;
+        transform: scale3d(0.8, 0.8, 1) translateY(-50%);
+        transition: opacity .2s cubic-bezier(0.6, 0.04, 0.98, 0.34), transform .2s cubic-bezier(0.6, 0.04, 0.98, 0.34);
+    }
+
+    .icon { color: $col1; vertical-align: -0.125em; font-size: 16px; margin-right: 10px; }
+
+    &-success {
+        .icon { color: $col6;}
+    }
+
+    &-error {
+        .icon { color: $col5;}
+    }
+
+    &-warn {
+        .icon { color: $col7;}
+    }
+
+    &-body {
+        display: inline-block;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 5px;
+        color: $col8;
+        padding: 10px 16px;
+        pointer-events: all;
+        transform-origin: 50% 0%;
+        
+    }
+}

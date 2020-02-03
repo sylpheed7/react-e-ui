@@ -1,0 +1,40 @@
+@import '../util.scss';
+/*设置图标样式*/
+.icon-list{
+    padding: 0 20px 20px 20px;
+    ul {
+        /*弹性布局*/
+        display: flex;
+        /*规定排列方向：向上，是否拆行拆列：换行第一行在上方*/
+        flex-flow: row wrap;
+        /*不占用各项所用空间对其各项图标：元素位于容器的开头。*/
+        align-content: flex-start;
+
+        li {
+            height: 120px;
+            box-sizing: border-box;
+            flex: 0 0 16.66%;
+            text-align: center;
+
+            .icon {
+                /*显示模式：块级元素*/
+                display: block;
+                height: 80px;
+                line-height: 80px;
+                font-size: 30px;
+                cursor: pointer;
+                /*控制图标变化速度*/
+                @include transition(font-size .3s cubic-bezier(.645, .045, .355, 1), padding .3s cubic-bezier(.645, .045, .355, 1));
+                /*鼠标移上图标放大*/
+                &:hover {
+                    font-size: 50px;
+                }
+            }
+            /*设置图标名字样式*/
+            .icon-name {
+                color: #606266;
+                font-size: 14px;
+            }
+        }
+    }
+}
